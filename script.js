@@ -1,36 +1,21 @@
-// Initialize EmailJS with your public key
+// Initialize EmailJS with the public key
 (function () {
-    emailjs.init(-oDfBkIqoGeBUnjcd); // Replace with your EmailJS public key
+    emailjs.init("-oDfBkIqoGeBUnjcd"); // Your public key
 })();
 
 // Add an event listener to the form submission
 document.getElementById("advancedRegistrationForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault(); // Prevent the form from submitting normally
 
     // Get the form data
     const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
+    const email = document.getElementById("email").value.trim(); // Recipient email
     const phone = document.getElementById("phone").value.trim();
     const dob = document.getElementById("dob").value;
 
-    // Debugging: Log each value to the console
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Phone:", phone);
-    console.log("Date of Birth:", dob);
-
-    // Validate that all fields are filled
+    // Validate form fields
     if (!name || !email || !phone || !dob) {
-        document.getElementById("errorMessage").textContent = "Please fill out all required fields.";
-        document.getElementById("errorMessage").style.display = "block";
-        document.getElementById("successMessage").style.display = "none";
-        return;
-    }
-
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        document.getElementById("errorMessage").textContent = "Please enter a valid email address.";
+        document.getElementById("errorMessage").textContent = "Please fill out all required fields correctly.";
         document.getElementById("errorMessage").style.display = "block";
         document.getElementById("successMessage").style.display = "none";
         return;
@@ -39,10 +24,10 @@ document.getElementById("advancedRegistrationForm").addEventListener("submit", f
     // Prepare template parameters
     const templateParams = {
         name: name,
-        email: email, // Recipient's email
+        email: email, // Dynamic email (recipient's email)
         phone: phone,
         dob: dob,
-        to_email: email, // User's email (recipient)
+        to_email: email, // Send to the user's email
     };
 
     // Send the email with EmailJS
@@ -51,7 +36,7 @@ document.getElementById("advancedRegistrationForm").addEventListener("submit", f
         .then(
             function (response) {
                 console.log("Email sent successfully:", response);
-                document.getElementById("successMessage").textContent = "Registration successful! Check your email.";
+                document.getElementById("successMessage").textContent = "Thank you for registering! Please check your email.";
                 document.getElementById("successMessage").style.display = "block";
                 document.getElementById("errorMessage").style.display = "none";
             },
@@ -63,6 +48,6 @@ document.getElementById("advancedRegistrationForm").addEventListener("submit", f
             }
         );
 
-    // Reset the form after successful submission
+    // Optionally reset the form
     document.getElementById("advancedRegistrationForm").reset();
 });
