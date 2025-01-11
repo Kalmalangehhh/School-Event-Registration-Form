@@ -1,0 +1,80 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: url(eyyyyyyy.png) no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Form Container */
+.container {
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Heading Styles */
+h1 {
+    text-align: center;
+    color: #5833ed;
+}
+
+/* Form Labels */
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #000000;
+}
+
+/* Input and Select Styles */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Button Styles */
+button {
+    width: 100%;
+    background-color: #54b958;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background-color: #45a049;
+}
+
+/* Success and Error Messages */
+.success-message {
+    display: none;
+    color: green;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.error-message {
+    display: none;
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
