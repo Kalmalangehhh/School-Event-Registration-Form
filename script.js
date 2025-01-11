@@ -1,6 +1,6 @@
 // Initialize EmailJS with your public key
 (function () {
-    emailjs.init("L5IKPQxaIlfhGQZPv"); // Replace with your EmailJS public key
+    emailjs.init(-oDfBkIqoGeBUnjcd); // Replace with your EmailJS public key
 })();
 
 // Add an event listener to the form submission
